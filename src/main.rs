@@ -30,7 +30,12 @@
 
 
 use std::fmt::format;
+use std::fs::File;
+use std::io::{ErrorKind, Write};
+
 fn main(){
+    let mut tor = File::create("lapa.txt").unwrap();
+    tor.write_all("Андрей долбаеб".as_bytes()).unwrap();
     let user_input ="ne";
     match user_input{
         "gg"=>println!("Ваш выбор: {}",roulette1(" Zipa".to_string())),
